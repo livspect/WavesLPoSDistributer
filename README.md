@@ -45,8 +45,8 @@ node distribute.js pay
 This is not just a script for airdrop. It is, basically the same as distributor, able to distribute any amount of the token depending on the number of blocks mined in addition to holding and fluctuation rate. Do the following after distributing the assets in some way, such as an original airdrop script.
 ```sh
 /*
- In the asset table (id column) enter the asset ID which recognized by wavesplatform.
- Adjust the values in the config table.
+ In the asset table replace your_asset_id to the asset ID which recognized by wavesplatform.
+ Adjust airdrop amount in the config table.
  Make sure to run periodically with cron.
 */
 node airdrop.js

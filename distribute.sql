@@ -1,5 +1,5 @@
 --
--- mport into the database with your favorite name
+-- import into the database with your favorite name
 --
 
 -- ------------------------------------------------------

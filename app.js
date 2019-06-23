@@ -9,7 +9,7 @@ worker =
    db_server: "127.0.0.1",
    db_user: "user_name",
    db_pwd: "database_pass",
-   db_name: "distribute",
+   db_name: "database_name",
 
    mail_server: "smtp.gmail.com",
    mail_port: 587,

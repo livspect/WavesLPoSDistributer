@@ -21,7 +21,7 @@ Enter the following to run the program:
 node distribute.js
 ```
 Find the latest mined block height from the block table and overwrite end distribute block in the config table.
-After preparing for distribution, the calculation could be started with:
+After preparing, the calculation could be started with:
 ```sh
 /*
  If an error occurs, the status field of the status table will be 2.
@@ -31,7 +31,7 @@ After preparing for distribution, the calculation could be started with:
 */
 node distribute.js dist
 ```
-After calculating for distribution, chacking balance could be started with:
+After calculating, chacking balance could be started with:
 ```sh
 /*
  Note: The distribution of MRT is once a day.
@@ -49,6 +49,7 @@ This is not just a script for airdrop. It is, basically the same as distributor,
  In the asset table replace your_asset_id to the asset ID which recognized by wavesplatform.
  Adjust airdrop amount in the config table.
  Make sure to run periodically with cron.
+ (better to run manually for the first time)
 */
 node airdrop.js
 

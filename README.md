@@ -65,3 +65,6 @@ By running this script periodically, part of the data present in the blockchain 
 */
 node dex.js
 ```
+
+## distributeWith.js
+You can distribute any asset in addition to WAVES and MRT. Once you have imported the dump file, you need to find your_asset_id and replace it with what you whould like to distribute. The basic operation is the same as the distribute.js script.

@@ -50,6 +50,7 @@ This is not just a script for airdrop. It is, basically the same as distributor,
  Make sure to run periodically with cron.
 */
 node airdrop.js
+
 node airdrop.js dist
 node airdrop.js balance
 node airdrop.js pay

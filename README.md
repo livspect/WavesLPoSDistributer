@@ -25,8 +25,9 @@ After preparing for distribution, the calculation could be started with:
 ```sh
 /*
  If an error occurs, the status field of the status table will be 2.
- Normal: 0
+ Stopped: 0
  Running: 1
+ Error:2
 */
 node distribute.js dist
 ```

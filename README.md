@@ -7,7 +7,7 @@ First of all, you need to install Node.js (https://nodejs.org/en/) and NPM. Afte
 mkdir node_modules
 npm install
 ```
-Once the dependencies are installed, the script that generates the payouts need to be configured. After putting the settings of the file you want to use, import the table definition dump file into mysql with any name.
+Once the dependencies are installed, the script that generates the payouts need to be configured. After putting the settings of the file you want to use, import the dump file into mysql with any name.
 
 ## distribute.js
 When you just run the script, it collects information especially block and leasing for distribution.
@@ -48,6 +48,15 @@ This is not just a script for airdrop. It is, basically the same as distributor,
  Make sure to run periodically with cron.
 */
 node airdrop.js
+node airdrop.js dist
+node airdrop.js balance
+node airdrop.js pay
 ```
 ## dex.js
 By running this script periodically, part of the data present in the blockchain is incorporated into the database.
+```sh
+/*
+ Make sure to run periodically with cron.
+*/
+node dex.js
+```

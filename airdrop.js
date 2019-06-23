@@ -1,5 +1,18 @@
 #!/usr/bin/node node
 
+/**
+ *  Put your settings here:
+ *      - db_user: mysql user
+ *      - db_pwd: mysql password
+ *      - db_name: database name imported database.sql
+ *      - mail_user: gmail address
+ *      - mail_pwd: gmail password
+ *      - address: waves address of the node you manage
+ *      - api_key: waves api key before encryption
+ *      - from: your gmail address entered in mail_user
+ *      - to: email address to receive alerts
+ */
+
 var mysql = require("promise-mysql");
 var request = require("request");
 var nodemailer = require("nodemailer");
@@ -872,7 +885,7 @@ worker =
       var mailOptions =
       {
          from: "gmail_address",
-         to: "gmail_address",
+         to: "gmail_address or whatever",
          subject: "Airdrop: " + subject,
          text: text
       };

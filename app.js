@@ -1574,8 +1574,8 @@ worker =
 
       var mailOptions =
       {
-         from: "wavespooltokyo@gmail.com",
-         to: "wavespooltokyo@gmail.com",
+         from: "gmail_address",
+         to: "gmail_address",
          subject: subject,
          text: text
       };

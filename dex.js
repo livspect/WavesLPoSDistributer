@@ -1,5 +1,16 @@
 #!/usr/bin/node node
 
+/**
+ *  Put your settings here:
+ *      - db_user: mysql user
+ *      - db_pwd: mysql password
+ *      - db_name: database name imported database.sql
+ *      - mail_user: gmail address
+ *      - mail_pwd: gmail password
+ *      - from: your gmail address entered in mail_user
+ *      - to: email address to receive alerts
+ */
+
 var mysql = require("promise-mysql");
 var request = require("request");
 var nodemailer = require("nodemailer");

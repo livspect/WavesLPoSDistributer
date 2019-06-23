@@ -1314,12 +1314,6 @@ worker =
                worker.log("ERROR: checking balance failed!", worker.log_level_info);
                reject();
             });
-         }).catch(function(e)
-         {
-            worker.log("ERROR: sums couldn't be selected: " + e, worker.log_level_info);
-            reject();
-         });
-      });
    },
 
    checkTxs: function()

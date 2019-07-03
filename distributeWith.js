@@ -18,23 +18,24 @@ var nodemailer = require("nodemailer");
 
 worker =
 {
-   db_server: "127.0.0.1",
-   db_user: "user_name",
-   db_pwd: "database_pass",
-   db_name: "database_name",
-
-   mail_server: "smtp.gmail.com",
-   mail_port: 587,
+   db_server: env.db_server,
+   db_user: env.db_user,
+   db_pwd:  env.db_pwd,
+   db_name: env.db_name,
+   
+   mail_port:   587,
    mail_secure: false,
-   mail_user: "gmail_address",
-   mail_pwd: "gmail_password",
+   mail_server: env.mail_server,
+   mail_user:   env.mail_user,
+   mail_pwd:    env.mail_pwd,
 
-   node: "http://127.0.0.1:7879",
+   node:              env.node,
+   api_key:           env.api_key,
+   
    generating_offset: 1000,
-   tx_timeout: 1000,
-   tx_fee: 100000,
-   tx_fee_lessor: 0,
-   api_key: "waves_api_key",
+   tx_timeout:        90,
+   tx_fee:            100000,
+   tx_fee_lessor:     0,
 
    argv_distribution: "dist",
    argv_payment: "pay",

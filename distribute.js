@@ -1114,7 +1114,7 @@ worker =
 
             delete paymentDo.id_address;
 
-            request.post({url: worker.node + '/assets/transfer', json: paymentDo, timeout: 5000, headers:{"Connection": "keep-alive", "Accept": "application/json", "Content-Type": "application/json", "api_key": worker.api_key}}, function(error, response, body)
+            request.post({url: worker.node + '/assets/masstransfe', json: paymentDo, timeout: 5000, headers:{"Connection": "keep-alive", "Accept": "application/json", "Content-Type": "application/json", "api_key": worker.api_key}}, function(error, response, body)
             {
                worker.log("RESPONSE: " + JSON.stringify(response) + ", BODY: " + JSON.stringify(body) + ", PAYMENT: " + JSON.stringify(paymentDo) + "\r\n", worker.log_level_debug);
 

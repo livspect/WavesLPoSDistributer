@@ -17,23 +17,26 @@ var mysql = require("promise-mysql");
 var request = require("request");
 var nodemailer = require("nodemailer");
 
+require('dotenv').config();
+const env = process.env;
+
 worker =
 {
-   db_server: "127.0.0.1",
-   db_user: "user_name",
-   db_pwd: "database_pass",
-   db_name: "database_name",
+   db_server: env.db_server,
+   db_user: env.db_user,
+   db_pwd:  env.db_pwd,
+   db_name: env.db_name,
 
-   mail_server: "smtp.gmail.com",
-   mail_port: 587,
-   mail_secure: false,
-   mail_user: "gmail_address",
-   mail_pwd: "gmail_password",
+   mail_server: env.mail_server,
+   mail_port:   env.mail_port,
+   mail_secure: env.mail_secure,
+   mail_user:   env.mail_user,
+   mail_pwd:    env.mail_pwd,
 
-   address: "your_waves_address",
-   node: "http://127.0.0.1:7879",
+   address:env.address
+   node: env.node,
    tx_timeout: 90,
-   api_key: "waves_api_key",
+   api_key: env.api_key,
 
    asset_waves: 0,
    asset_token: 1,

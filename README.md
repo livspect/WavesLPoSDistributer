@@ -4,9 +4,10 @@ A revenue distribution tool for Waves nodes
 ## Installation
 First of all, you need to install Node.js (https://nodejs.org/en/) and NPM. Afterwards the installation of the dependencies could be done via:
 ```sh
-mkdir node_modules
 npm install
+cp .env-sample .env
 ```
+Edit `.env` file as comment shows.
 Once the dependencies are installed, the script that generates the payouts need to be configured. After putting the settings of the file you want to use, import the dump file into mysql with any name.
 
 ## distribute.js

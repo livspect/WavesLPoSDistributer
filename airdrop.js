@@ -20,6 +20,9 @@ var nodemailer = require("nodemailer");
 require('dotenv').config();
 const env = process.env;
 
+function toBoolean (data) {
+   return data.toLowerCase() === 'true';
+}
 worker =
 {
    db_server: env.db_server,
@@ -28,8 +31,8 @@ worker =
    db_name: env.db_name,
 
    mail_server: env.mail_server,
-   mail_port:   env.mail_port,
-   mail_secure: env.mail_secure,
+   mail_port:   parseInt(env.mail_port),
+   mail_secure: toBoolean(env.mail_secure),
    mail_user:   env.mail_user,
    mail_pwd:    env.mail_pwd,
 

@@ -17,6 +17,9 @@ var nodemailer = require("nodemailer");
 
 require('dotenv').config();
 const env = process.env;
+function toBoolean (data) {
+   return data.toLowerCase() === 'true';
+}
 
 worker =
 {
@@ -27,7 +30,7 @@ worker =
 
    mail_server: env.mail_server,
    mail_port:   env.mail_port,
-   mail_secure: env.mail_secure,
+   mail_secure: toBoolean(env.mail_secure),
    mail_user:   env.mail_user,
    mail_pwd:    env.mail_pwd,
 

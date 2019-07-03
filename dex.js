@@ -24,10 +24,10 @@ worker =
    db_user: env.db_user,
    db_pwd:  env.db_pwd,
    db_name: env.db_name,
-
+   
+   mail_port:   587,
+   mail_secure: false,
    mail_server: env.mail_server,
-   mail_port:   env.mail_port,
-   mail_secure: env.mail_secure,
    mail_user:   env.mail_user,
    mail_pwd:    env.mail_pwd,
 

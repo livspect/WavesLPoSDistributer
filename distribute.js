@@ -31,12 +31,12 @@ worker =
    mail_user:   env.mail_user,
    mail_pwd:    env.mail_pwd,
 
-   node: "http://127.0.0.1:6869",
-   generating_offset: 1000,
-   tx_timeout: 90,
-   tx_fee: 100000,
-   tx_fee_lessor: 0,
-   api_key: env.api_key,
+   node:              env.node,
+   generating_offset: env.generating_offset,
+   tx_timeout:        env.tx_timeout,
+   tx_fee:            env.tx_fee,
+   tx_fee_lessor:     env.tx_fee_lessor,
+   api_key:           env.api_key,
 
    argv_distribution: "dist",
    argv_payment: "pay",

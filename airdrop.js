@@ -26,17 +26,18 @@ worker =
    db_user: env.db_user,
    db_pwd:  env.db_pwd,
    db_name: env.db_name,
-
+   
+   mail_port:   587,
+   mail_secure: false,
    mail_server: env.mail_server,
-   mail_port:   env.mail_port,
-   mail_secure: env.mail_secure,
    mail_user:   env.mail_user,
    mail_pwd:    env.mail_pwd,
 
-   address:env.address
-   node: env.node,
+   node:        env.node,
+   address:     env.address,
+   api_key:     env.api_key,
+   
    tx_timeout: 90,
-   api_key: env.api_key,
 
    asset_waves: 0,
    asset_token: 1,

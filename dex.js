@@ -2,13 +2,7 @@
 
 /**
  *  Put your settings here:
- *      - db_user: mysql user
- *      - db_pwd: mysql password
- *      - db_name: database name imported database.sql
- *      - mail_user: gmail address
- *      - mail_pwd: gmail password
- *      - from: your gmail address entered in mail_user
- *      - to: email address to receive alerts
+ *      - .env file
  */
 
 var mysql = require("promise-mysql");
@@ -18,18 +12,25 @@ var nodemailer = require("nodemailer");
 require('dotenv').config();
 const env = process.env;
 
+function toBoolean (data) {
+   return data.toLowerCase() === 'true';
+}
+
 worker =
 {
    db_server: env.db_server,
    db_user: env.db_user,
-   db_pwd:  env.db_pwd,
+   db_pwd: env.db_pwd,
    db_name: env.db_name,
    
-   mail_port:   587,
-   mail_secure: false,
+   mail_port: Number(env.mail_port),
+   mail_secure: toBoolean(env.mail_secure),
    mail_server: env.mail_server,
-   mail_user:   env.mail_user,
-   mail_pwd:    env.mail_pwd,
+   mail_user: env.mail_user,
+   mail_pwd: env.mail_pwd,
+   
+   from: env.from,
+   to: env.to,
 
    status_stopped: 0,
    status_running: 1,
@@ -766,8 +767,8 @@ worker =
 
       var mailOptions =
       {
-         from: "gmail_address",
-         to: "gmail_address or whatever",
+         from: worker.from,
+         to: worker.to,
          subject: subject,
          text: text
       };

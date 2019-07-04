@@ -15,7 +15,6 @@ When you just run the script, it collects information especially block and leasi
 Enter the following to run the program:
 ```sh
 /*
- Replace your_waves_address to your waves address in the node table.
  Make sure to run periodically with cron.
  (better to run manually for the first time)
 */

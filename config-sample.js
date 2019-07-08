@@ -1,0 +1,20 @@
+exports.config = { 
+    db_user:'',
+    db_server:'',
+    db_pwd:'',
+    db_name:'',
+    mail_server:'smtp.gmail.com',
+    mail_port:587,
+    mail_secure:false,
+    mail_user:'',
+    mail_pwd:'',
+    from:'',
+    to:'',
+    ddress:'',
+    node:'http://127.0.0.1:6869',
+    api_key:'',
+    generating_offset:1000,
+    tx_timeout:90,
+    tx_fee:100000,
+    tx_fee_lessor:0
+};

@@ -1,5 +1,10 @@
 node_modules/
 !node_modules/.gitkeep
+config.js
+logs/
+!logs/.gitkeep
+archives-data/
+!archives-data/.gitkeep
 .env
 *.swp
 

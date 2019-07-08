@@ -15,28 +15,32 @@
 var mysql = require("promise-mysql");
 var request = require("request");
 var nodemailer = require("nodemailer");
-require('dotenv').config();
-const env = process.env;
+//require('dotenv').config();
+//const env = process.env;
+var config = require('./config.js').config;
 
 worker =
 {
-   db_server: env.db_server,
-   db_user: env.db_user,
-   db_pwd:  env.db_pwd,
-   db_name: env.db_name,
+   db_server: config.db_server,
+   db_user:   config.db_user,
+   db_pwd:    config.db_pwd,
+   db_name:   config.db_name,
 
-   mail_server: env.mail_server,
-   mail_port:   env.mail_port,
-   mail_secure: env.mail_secure,
-   mail_user:   env.mail_user,
-   mail_pwd:    env.mail_pwd,
+   mail_server: config.mail_server,
+   mail_port:   config.mail_port,
+   mail_secure: config.mail_secure,
+   mail_user:   config.mail_user,
+   mail_pwd:    config.mail_pwd,
 
-   node:              env.node,
-   generating_offset: env.generating_offset,
-   tx_timeout:        env.tx_timeout,
-   tx_fee:            env.tx_fee,
-   tx_fee_lessor:     env.tx_fee_lessor,
-   api_key:           env.api_key,
+   from: config.from,
+   to: config.to,
+
+   node:              config.node,
+   generating_offset: config.generating_offset,
+   tx_timeout:        config.tx_timeout,
+   tx_fee:            config.tx_fee,
+   tx_fee_lessor:     config.tx_fee_lessor,
+   api_key:           config.api_key,
 
    argv_distribution: "dist",
    argv_payment: "pay",
@@ -1114,7 +1118,7 @@ worker =
 
             delete paymentDo.id_address;
 
-            request.post({url: worker.node + '/assets/masstransfer', json: paymentDo, timeout: 5000, headers:{"Connection": "keep-alive", "Accept": "application/json", "Content-Type": "application/json", "api_key": worker.api_key}}, function(error, response, body)
+            request.post({url: worker.node + '/assets/transfer', json: paymentDo, timeout: 5000, headers:{"Connection": "keep-alive", "Accept": "application/json", "Content-Type": "application/json", "api_key": worker.api_key}}, function(error, response, body)
             {
                worker.log("RESPONSE: " + JSON.stringify(response) + ", BODY: " + JSON.stringify(body) + ", PAYMENT: " + JSON.stringify(paymentDo) + "\r\n", worker.log_level_debug);
 

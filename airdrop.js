@@ -16,27 +16,33 @@
 var mysql = require("promise-mysql");
 var request = require("request");
 var nodemailer = require("nodemailer");
+var config = require('./config.js').config;
 
-require('dotenv').config();
-const env = process.env;
+
+//require('dotenv').config();
+//const env = process.env;
+//
 
 worker =
 {
-   db_server: env.db_server,
-   db_user: env.db_user,
-   db_pwd:  env.db_pwd,
-   db_name: env.db_name,
+   db_server: config.db_server,
+   db_user:   config.db_user,
+   db_pwd:    config.db_pwd,
+   db_name:   config.db_name,
 
-   mail_server: env.mail_server,
-   mail_port:   env.mail_port,
-   mail_secure: env.mail_secure,
-   mail_user:   env.mail_user,
-   mail_pwd:    env.mail_pwd,
+   mail_server: config.mail_server,
+   mail_port:   config.mail_port,
+   mail_secure: config.mail_secure,
+   mail_user:   config.mail_user,
+   mail_pwd:    config.mail_pwd,
 
-   address:env.address
-   node: env.node,
-   tx_timeout: 90,
-   api_key: env.api_key,
+   node:              config.node,
+   generating_offset: config.generating_offset,
+   tx_timeout:        config.tx_timeout,
+   tx_fee:            config.tx_fee,
+   tx_fee_lessor:     config.tx_fee_lessor,
+   api_key:           config.api_key,
+   address:     config.address
 
    asset_waves: 0,
    asset_token: 1,

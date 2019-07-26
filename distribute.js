@@ -1592,8 +1592,8 @@ worker =
 
       var mailOptions =
       {
-         from: "gmail_address",
-         to: "gmail_address or whatever",
+         from: worker.from,
+         to: worker.to,
          subject: subject,
          text: text
       };
